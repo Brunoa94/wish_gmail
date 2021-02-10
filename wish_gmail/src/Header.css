@@ -1,0 +1,110 @@
+.header{
+    height: 50px;
+    display:flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(209, 209, 209);
+    padding-left:15px;
+    padding-right: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.left__part__header{
+    flex:0.2;
+    display:flex;
+    align-items: center;
+}
+
+.right__part__header{
+    flex:0.15;
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.header__icon__div{
+    padding:5px;
+    cursor: pointer;
+    border-radius: 50%;
+    height:30px;
+    width:30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__icon__div:hover{
+    background-color: rgb(231, 227, 227);
+}
+
+.header__icon{
+    font-size: 23px;
+    color: rgb(102, 101, 101);
+}
+
+.right__part__header .my__avatar{
+    height:33px;
+    width:33px;
+}
+.gmail__header__logo{
+    display:flex;
+    align-items: center;
+    padding-left: 10px;
+    cursor:pointer;
+}
+
+.gmail__header__logo span{
+    font-size:22px;
+    color:rgb(102, 101, 101);
+    padding-left:13px;
+}
+.gmail__header__logo img{
+    height:40px;
+}
+
+/* SEARCH DIV */
+.search__div{
+    display:flex;
+    width:80%;  
+    flex:0.65;
+}
+
+.search__div form{
+    display:flex;
+    align-items: center;
+    padding: 5px;
+    width: 90%;
+    background-color:#f1f3f4;
+    border-radius:10px;
+}
+
+.search__div form input{
+    outline: none;
+    border: none;
+    background: none;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.search__div form input::placeholder{
+    font-size:15px;
+    color: rgb(102, 101, 101);
+    font: normal 16px Helvetica;
+}
+
+.search__div > form > button{
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.search__icon{
+    color:rgb(102, 101, 101);
+    font-size:19px;
+}
+
+.search__div form button + .header__icon__div{
+    margin-left: auto;
+}

@@ -1,0 +1,90 @@
+.email__item{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(209, 208, 208, 0.4);
+    padding-top:3px;
+    padding-bottom:3px;
+    width:100%;
+    cursor:pointer;
+}
+
+.email__item__icons{
+    flex:0.09;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    opacity: 0.4;
+}
+
+.email__item__body{
+    display:flex;
+    align-items: center;
+    flex:0.91;
+    width:100%;
+}
+
+.email__item__body span{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.email__item__body .date{
+    flex:0.1;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+.email__item__body .sender{
+    flex:0.15;
+    width:100%;
+}
+
+.email__item__body .title__description{
+    flex:0.7;
+    width:100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+
+.email__item__body .onhover__email__item__icons{
+    display:none;
+}
+
+/* hover e-mail item */
+
+.email__item:hover{
+    box-shadow: 0 1px 4px 1px rgb(60 64 67 / 50%);
+}
+
+.email__item:hover .email__item__icons{
+    opacity: 1;
+}
+
+.email__item:hover .onhover__email__item__icons{
+    display:flex;
+    flex:0.2;
+    width:100%;
+    align-items:center;
+    justify-content:space-around
+}
+
+.email__item:hover .email__item__body .title__description{
+    flex: 0.65;
+}
+
+.email__item:hover .email__item__body .date{
+    display:none;
+}
+
+
+.email__item__grid{
+    position:absolute;
+    opacity: 0.4;
+    color:darkgray;
+    left:0;
+    z-index: -2;
+}

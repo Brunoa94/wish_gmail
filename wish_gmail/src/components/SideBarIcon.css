@@ -1,0 +1,67 @@
+.sidebar__icon{
+    display:flex;
+    align-items:center;
+    padding-left:20px;
+}
+
+.sidebar__icon__div{
+    padding:5px;
+    height:25px;
+    width:25px;
+    border-radius: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+
+.sidebar__icon:hover{
+    background-color: rgb(243, 241, 241);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.meet-div .meet__title__div{
+    display:none;
+}
+
+.sidebar__icon__div:hover{
+    background-color: rgb(243, 241, 241);
+}
+
+.sidebar__icon__div .icon{
+    font-size: 20px;
+    color:rgb(131, 130, 130);
+}
+
+/***** expanded ****/
+
+.left__side__bar:hover .sidebar__icon__span{
+    padding-left: 20px;
+}
+
+.left__side__bar:hover .sidebar__icon .sidebar__icon__span span{
+    display: contents;
+    font-size: .875rem;  
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left__side__bar:hover .meet-div .sidebar__icon__span{
+    display:none
+}
+
+.left__side__bar:hover .meet-div .sidebar__icon__div{
+    display:none
+}
+
+.left__side__bar:hover .meet-div .meet__title__div{
+    padding:5px;
+    padding-left: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left__side__bar:hover .meet__title__div .hidden__title{
+    font-size: 13px;
+}

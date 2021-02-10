@@ -1,0 +1,62 @@
+.square__google__icon{
+    height: 25px;
+    width: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+    padding-right: 2px;
+    color:rgb(131, 130, 130);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.rounded__google__icon{
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    color:rgb(131, 130, 130);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.rounded__google__icon:hover{
+    background-color: rgb(243, 241, 241);
+    border-radius: 50%;
+}
+
+.square__google__icon:hover{
+    background-color: rgb(243, 241, 241);
+    border-top-right-radius: 5px; 
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px; 
+    border-bottom-right-radius: 5px; 
+}
+
+.google__icon__img{
+    font-size:20px;
+}
+
+.left__part__container__header .refresh{
+    margin-left: auto;
+}
+
+.left__part__container__header .triangle__down .google__icon__img{
+    font-size: 10px;
+}
+
+.turn__page .google__icon__img{
+    font-size:15px;
+}
+
+.turn__page{
+    margin-left: 5px;
+}
+
+.rounded__google__icon img{
+    height:20px;
+    width:20px;
+}
