@@ -35,9 +35,9 @@ function Container() {
                 <LeftSideBar></LeftSideBar>
             </div>
             <div className="center">
-                <div className="center__header">
+                <div className="container__header">
                     <div className="left__part__container__header">
-                        <GoogleIcon Icon={BiSquareRounded} type="square"></GoogleIcon>
+                        <GoogleIcon Icon={BiSquareRounded} type="rounded" icon__name="header__square"></GoogleIcon>
                         <GoogleIcon Icon={GoTriangleDown} type="square" icon__name="triangle__down"></GoogleIcon>
                         <GoogleIcon Icon={IoMdRefresh} type="rounded" icon__name="refresh"></GoogleIcon>
                     </div>
@@ -51,7 +51,7 @@ function Container() {
                         <div className="turn__pages">
                             <GoogleIcon Icon={AiOutlineLeft} type="rounded" icon__name="turn__page"></GoogleIcon>
                             <GoogleIcon Icon={AiOutlineRight} type="rounded" icon__name="turn__page"></GoogleIcon>
-                        </div>                       
+                        </div> 
                     </div>
                 </div>
                 <div className="emails__container">

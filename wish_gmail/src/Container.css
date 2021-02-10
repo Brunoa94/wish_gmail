@@ -17,7 +17,6 @@
     left:72px;
     right:60px;
     height:100%;
-    display:inline-block;
 }
 
 .right__side{
@@ -31,24 +30,33 @@
     align-items: center;
 }
 
-.center__header{
+.container__header{
     display:flex;
-    padding:5px;
-    border-bottom:1px solid rgb(224, 223, 223);
+    width:100%;
 }
 
 .left__part__container__header{
     display:flex;
-    align-items: center;
-    flex:0.09;
+    flex: 0.09;
     width:100%;
 }
 
+.left__part__container__header .refresh{
+    margin-left: 19px;
+}
+
+.center__part__container__header{
+    display:flex;
+    flex: 0.71;
+    width:100%;
+    align-items: center;
+}
+
 .right__part__container__header{
+    flex:0.2;
     display:flex;
     align-items: center;
-    flex:0.21;
-    margin-left: auto;
+    width:100%;
 }
 
 .pagination__number{
@@ -76,7 +84,8 @@
 }
 
 .emails__container{
-    display:inline-block;
+    display:flex;
+    flex-direction: column;
     width:100%;
 }
 
