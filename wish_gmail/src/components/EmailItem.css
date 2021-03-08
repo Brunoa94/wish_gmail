@@ -9,18 +9,17 @@
 }
 
 .email__item__icons{
-    flex:0.09;
+    flex:0.05;
     width:100%;
     display:flex;
     align-items: center;
-    justify-content: space-evenly;
     opacity: 0.4;
 }
 
 .email__item__body{
     display:flex;
     align-items: center;
-    flex:0.91;
+    flex:0.95;
     width:100%;
 }
 
@@ -87,4 +86,9 @@
     color:darkgray;
     left:0;
     z-index: -2;
+}
+
+.email__item__body .date span{
+    font-size: 13px;
+    padding-right: 15px;
 }

@@ -10,7 +10,17 @@ import { FiClock } from 'react-icons/fi'
 const email_items = [ [BiSquareRounded, "select"], [ BiStar, "favorite"], [ BsBookmark, "mark"] ]
 const onhover_email_items = [ [IoArchiveSharp, "archive"], [MdDelete, "delete"], [BsFillEnvelopeOpenFill, "envelope"], [FiClock, "clock"]]
 
-function EmailItem({sender, title, description, date}) {
+function defineDate(timestamp){
+    var today = new Date();
+    var timestampDate = new Date(1970, 0, 1); // Epoch
+    timestampDate.setSeconds(timestamp.seconds);
+    var differenceInDays = Math.floor(( Date.UTC( today.getFullYear(), today.getMonth(), today.getDate())  - Date.UTC( timestampDate.getFullYear(), timestampDate.getMonth(), timestampDate.getDate() ))  / (1000 * 3600 * 24)) 
+    if (differenceInDays === 0) return `${timestampDate.getHours()}:${timestampDate.getMinutes() < 10 ? '0' : ''}${timestampDate.getMinutes()}` 
+    if ( today.getFullYear() === timestampDate.getFullYear()) return `${timestampDate.getDate()}/${timestampDate.getMonth()}`
+    return `${timestampDate.getDate()}/${timestampDate.getMonth()}/${timestampDate.getFullYear()}`
+}
+
+function EmailItem({sender, subject, description, timestamp}) {
     return (
         <div className="email__item">
             <div className="email__item__icons">
@@ -26,11 +36,11 @@ function EmailItem({sender, title, description, date}) {
                     <span><strong>{sender}</strong></span>
                 </div>
                 <div className="title__description">
-                    <span><strong>{title}</strong></span>
+                    <span><strong>{subject}</strong></span>
                     <span>{description}</span>
                 </div>
                 <div className="date">
-                    <span><strong>{date}</strong></span>
+                    <span><strong>{defineDate(timestamp)}</strong></span>
                 </div>
                 <div className="onhover__email__item__icons">
                     {

@@ -1,0 +1,20 @@
+.compose__box__item{
+    padding:2px;
+    cursor: pointer;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compose__box__item .box__item__icon{
+    font-size:18px;
+    color: darkgray;
+}
+
+.compose__box__item:hover{
+    background-color: darkgray;
+}
+
+.compose__box__item:hover .box__item__icon{
+    color:white;
+}

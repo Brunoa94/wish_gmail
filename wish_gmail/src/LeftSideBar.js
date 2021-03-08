@@ -10,6 +10,8 @@ import { GoTriangleDown } from 'react-icons/go'
 import Avatar from '@material-ui/core/Avatar';
 import SideBarIcon from './components/SideBarIcon'
 import If from './If'
+import { setBoxVisible } from './composeBoxSlice'
+import { useDispatch } from 'react-redux'
 
 const first_part_icons=[
     [
@@ -69,10 +71,11 @@ const second_part_icons = [
 
 function LeftSideBar() {
     const[openNav, setOpenNav] = useState(false);
+    const dispatch = useDispatch();
     
     return (
         <div className="left__side__bar">
-            <div className="compose__div">
+            <div className="compose__div" onClick={() => dispatch(setBoxVisible())}>
                 <div className="compose__img">
                     <img alt="Compose Img" src="https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png"></img>
                 </div>

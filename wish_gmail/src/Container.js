@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Container.css'
 import LeftSideBar from './LeftSideBar'
 import GoogleIcon from './components/GoogleIcon'
@@ -8,6 +8,10 @@ import { IoMdRefresh } from 'react-icons/io'
 import { RiMore2Fill } from 'react-icons/ri'
 import { AiOutlineLeft, AiOutlineRight, AiOutlinePlus } from 'react-icons/ai'
 import EmailItem from './components/EmailItem'
+import ComposeBox from './components/ComposeBox'
+import { useDispatch } from 'react-redux'
+import { setMessage } from './composeBoxSlice'
+import { db } from './firebase'
 
 const right_side__imgs = [
     [
@@ -28,7 +32,21 @@ const right_side__imgs = [
     ]
 ]
 
+
+
 function Container() {
+    const [posts, setPosts] = useState([])
+
+    useEffect(() => {
+        db.collection("emails").onSnapshot((snapshot) =>
+        setPosts(
+            snapshot.docs.map((doc) => ({
+                id: doc.id,
+                data: doc.data()
+            }))
+        ));
+    }, [])
+
     return (
         <div className="main__container">
             <div className="left__side">
@@ -55,11 +73,12 @@ function Container() {
                     </div>
                 </div>
                 <div className="emails__container">
-                    <EmailItem sender="Wish" title="Canalize sua criatividade com projetos divertidos!" description="Olá Bruno, canalize suas ideias com projetos inovadores..." date="11:56"></EmailItem>
-                    <EmailItem sender="Lifenatura" title="Fortalecer a Imunidade com menos 5€" description="Encomendas acima dos 30€ View this email in your browser, Olá Bruno" date="10:15"></EmailItem>
-                    <EmailItem sender="Netflix" title="Veja de novo a Netflix hoje mesmo!" description="Há sempre qualquer coisa para ver na Netflix. Veja filmes conhecidos e também" date="08:12"></EmailItem>
-                    <EmailItem sender="Google Maps Timeline" title="Bruno, os seus destaques de Janeiro" description="Este email da linha cronológica é um resumo automatizado dos locais" date="5/02"></EmailItem>
-                    <EmailItem sender="Banggood.com" title="Os 15 brinquedos mais populares deste ano? Compre com antecedência e economize o seu..." description="Olá Bruno, roupa acessorios" date="3/02"></EmailItem>
+                    {
+                        posts.map(({ id, data: {sender, subject, description, 
+                            timestamp } }) => (
+                            <EmailItem key={id} sender={sender} subject={subject} decription={description} timestamp={timestamp}></EmailItem>
+                        ))
+                    }
                 </div>
             </div>
             <div className="right__side">
@@ -75,6 +94,7 @@ function Container() {
                     <GoogleIcon Icon={AiOutlineRight} type="rounded" icon__name="right_arrow"></GoogleIcon>
                 </div>
             </div>
+            <ComposeBox></ComposeBox>
         </div>
     )
 }
